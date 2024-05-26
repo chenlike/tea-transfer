@@ -38,7 +38,7 @@ async function getTAO() {
 
 
   loading.value = true
-  const res = await axios.post("http://1.117.242.212:4568/api/sendTAO", {
+  const res = await axios.post("https://tea-transfer-server-dkvcaktgb-chenlikes-projects.vercel.app/api/sendTAO", {
     address: address.value
   })
   result.value = res.data

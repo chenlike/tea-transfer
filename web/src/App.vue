@@ -68,7 +68,9 @@ function openExplorer() {
         <n-input v-model:value="address" placeholder="TEA address  eg:0x289463B7130Bca4c56BfE25D6dd8f392f2305829" />
         <n-alert title="提示" type="default">
           输入你的TEA地址(不是用户名) 获取10个TAO <span style="color:red">仅限没有TAO的地址</span> <br />
-          样例:0x289463B7130Bca4c56BfE25D6dd8f392f2305829
+          样例:0x289463B7130Bca4c56BfE25D6dd8f392f2305829 <br/>
+          代码开源: https://github.com/chenlike/tea-transfer
+
         </n-alert>
         <n-button @click="getTAO" :loading="loading" type="primary">GET TAO!</n-button>
 

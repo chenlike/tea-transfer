@@ -1,0 +1,13 @@
+{
+  "name": "tea-transfer",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "GPL-3.0-only",
+  "dependencies": {
+    "@hapi/hapi": "^21.3.9",
+    "@safe-global/api-kit": "^2.4.0",
+    "@safe-global/protocol-kit": "^4.0.0",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.12.1"
+  }
+}

@@ -3,7 +3,7 @@ const { ethers } = require('ethers');
 const Safe = require('@safe-global/protocol-kit').default;
 const SafeApiKit = require('@safe-global/api-kit').default;
 const Hapi = require('@hapi/hapi');
-
+const path = require("path")
 
 const provider = new ethers.JsonRpcProvider(process.env.RPC_URL);
 const ownerSigner = new ethers.Wallet(process.env.OWNER_PRIVATE_KEY, provider);
@@ -68,7 +68,18 @@ async function start() {
             "cors": true
         }
     });
+    await server.register(require('inert'));
 
+    server.route({
+        method: 'GET',
+        path: '/{param*}',
+        handler: {
+            directory: {
+                path: path.join(__dirname, 'public'),
+                index: ['index.html']
+            }
+        }
+    });
     server.route({
         method: 'POST',
         path: '/api/sendTAO',
